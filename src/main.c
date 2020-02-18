@@ -12,7 +12,7 @@ const char *consonants = "bcdfghjklmnpqrstvwxz";
 const char *numbers = "0123456789";
 const char *specials = "!@#$%^&*-+?";
 
-unsigned char *generate_password(int length, int capitalized, int specialized, int numbered, int seed) {
+unsigned char *generate_password(int length, int capitalized, int specialized, int number_amount, int seed) {
     unsigned char *pwd = calloc(length + 1, sizeof(char));
     int sign = TRUE;
     srand(seed);
@@ -22,14 +22,12 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
         sign = (sign) ? FALSE : TRUE;
     }
 
+    for (int i = 0; i < number_amount; i++) {
+        pwd[length - 1 - i] = numbers[rand() % strlen(numbers)];
+    }
+
     if (capitalized) pwd[0] = toupper(pwd[0]);
-
-    if (numbered) {
-        pwd[length - 1] = numbers[rand() % strlen(numbers)];
-        pwd[length - 2] = numbers[rand() % strlen(numbers)];
-
-        if (specialized) pwd[length - 3] = specials[rand() % strlen(specials)];
-    } else if (specialized) pwd[length - 1] = specials[rand() % strlen(specials)];
+    if (specialized) pwd[length - 1 - number_amount] = specials[rand() % strlen(specials)];
 
     return pwd;
 }
@@ -38,8 +36,8 @@ int main(int argc, char **argv) {
     int length = 12;
     int capitalized = FALSE;
     int specialized = FALSE;
-    int numbered = FALSE;
-    int num = 1;
+    int number_amount = 0;
+    int password_amount = 1;
 
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
         printf("Samurai: Human Readable Password Generator\n\n");
@@ -56,8 +54,13 @@ int main(int argc, char **argv) {
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-c") == 0) capitalized = TRUE;
         else if (strcmp(argv[i], "-s") == 0) specialized = TRUE;
-        else if (strcmp(argv[i], "-n") == 0) numbered = TRUE;
-        else if (strcmp(argv[i], "-l") == 0) {
+        else if (strcmp(argv[i], "-n") == 0) {
+            i++;
+            if (sscanf(argv[i], "%d", &number_amount) == 0) {
+                printf("\"%s\" is not an integer value.\n", argv[i]);
+                exit(EXIT_FAILURE);
+            }
+        } else if (strcmp(argv[i], "-l") == 0) {
             i++;
             if (sscanf(argv[i], "%d", &length) == 0) {
                 printf("\"%s\" is not an integer value.\n", argv[i]);
@@ -65,7 +68,7 @@ int main(int argc, char **argv) {
             }
         } else if (strcmp(argv[i], "-x") == 0) {
             i++;
-            if (sscanf(argv[i], "%d", &num) == 0) {
+            if (sscanf(argv[i], "%d", &password_amount) == 0) {
                 printf("\"%s\" is not an integer value.\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
@@ -75,8 +78,8 @@ int main(int argc, char **argv) {
         }
     }
 
-    for (int i = 0; i < num; i++) {
-        unsigned char *pwd = generate_password(length, capitalized, specialized, numbered, clock());
+    for (int i = 0; i < password_amount; i++) {
+        unsigned char *pwd = generate_password(length, capitalized, specialized, number_amount, clock());
         printf("%s\n", pwd);
         free(pwd);
     }

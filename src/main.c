@@ -42,8 +42,8 @@ int main(int argc, char **argv) {
     int num = 1;
 
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
-        printf("Smutsia: Human Readable Password Generator\n\n");
-        printf("Usage: smutsia [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]\n\n");
+        printf("Samurai: Human Readable Password Generator\n\n");
+        printf("Usage: samurai [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]\n\n");
         printf("-h:\t\t Print this help page.\n");
         printf("-x <int>:\t Set the amount of generated passwords.\n");
         printf("-l <int>:\t Set the length of the generated password.\n");
@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
                 exit(EXIT_FAILURE);
             }
         } else {
-            printf("\"%s\" is not a valid flag. Run `smutsia -h` for usage information.\n", argv[i]);
+            printf("\"%s\" is not a valid flag. Run `samurai -h` for usage information.\n", argv[i]);
             exit(EXIT_FAILURE);
         }
     }

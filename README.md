@@ -2,9 +2,9 @@
 
 <p align="center"> <img src="./icon.png" alt="icon" width="100" height="100" /> </p>
 
-# Smutsia
+# Samurai
 
-Smutsia is a simple password generator for the command line. Simple is the magic word, the source is very simple and clean but additionally the generated passwords are human readable, pronouncable and easily typed. No more 30 character password strings of garbled text that only computers can distinguish.
+Samurai is a simple password generator for the command line. Simple is the magic word, the source is very simple and clean but additionally the generated passwords are human readable, pronouncable and easily typed. No more 30 character password strings of garbled text that only computers can distinguish.
 
 ## Getting Started
 

@@ -14,7 +14,7 @@ cmake-build-debug
 *.cbp
 
 # Ignore build application
-smutsia
+samurai
 
 # Ignore generated files
 bin/

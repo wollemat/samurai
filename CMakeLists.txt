@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
-project(Smutsia)
+project(Samurai)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(smutsia src/main.c)
+add_executable(samurai src/main.c)

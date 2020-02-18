@@ -17,6 +17,9 @@ unsigned char *generate_password(int length, int capitalized, int specialized) {
         sign = (sign) ? false : true;
     }
 
+    if (capitalized) pwd[0] = 'A';
+    if (specialized) pwd[length] = specials[0];
+
     return pwd;
 }
 

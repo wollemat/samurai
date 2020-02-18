@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
         printf("-l <int>:\t Set the length of the generated password.\n");
         printf("-c:\t\t Enable capitalization of the password.\n");
         printf("-s:\t\t Add a special character to the password.\n");
-        printf("-h:\t\t Add numbers to the password.\n");
+        printf("-n:\t\t Add numbers to the password.\n");
         exit(EXIT_SUCCESS);
     }
 

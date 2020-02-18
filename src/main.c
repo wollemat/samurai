@@ -4,8 +4,8 @@
 #include <string.h>
 #include <time.h>
 
-const int true = 1;
-const int false = 0;
+const int TRUE = 1;
+const int FALSE = 0;
 
 const char *vowels = "aeiouy";
 const char *consonants = "bcdfghjklmnpqrstvwxz";
@@ -14,12 +14,12 @@ const char *specials = "!@#$%^&*-+?";
 
 unsigned char *generate_password(int length, int capitalized, int specialized, int numbered, int seed) {
     unsigned char *pwd = calloc(length + 1, sizeof(char));
-    int sign = true;
+    int sign = TRUE;
     srand(seed);
 
     for (int i = 0; i < length; i++) {
         pwd[i] = (sign) ? consonants[rand() % strlen(consonants)] : vowels[rand() % strlen(vowels)];
-        sign = (sign) ? false : true;
+        sign = (sign) ? FALSE : TRUE;
     }
 
     if (capitalized) pwd[0] = toupper(pwd[0]);
@@ -36,9 +36,9 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
 
 int main(int argc, char **argv) {
     int length = 10;
-    int capitalized = false;
-    int specialized = false;
-    int numbered = false;
+    int capitalized = FALSE;
+    int specialized = FALSE;
+    int numbered = FALSE;
     int num = 1;
 
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
@@ -54,9 +54,9 @@ int main(int argc, char **argv) {
     }
 
     for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-c") == 0) capitalized = true;
-        else if (strcmp(argv[i], "-s") == 0) specialized = true;
-        else if (strcmp(argv[i], "-n") == 0) numbered = true;
+        if (strcmp(argv[i], "-c") == 0) capitalized = TRUE;
+        else if (strcmp(argv[i], "-s") == 0) specialized = TRUE;
+        else if (strcmp(argv[i], "-n") == 0) numbered = TRUE;
         else if (strcmp(argv[i], "-l") == 0) {
             i++;
             if (sscanf(argv[i], "%d", &length) == 0) {

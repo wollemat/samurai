@@ -29,7 +29,7 @@ Running Samurai is just as easy as building it. Simply run the build executable 
 $ samurai
 ```
 
-By default, Samurai will generate a single password of 10 characters long, not capitalized, without numbers and special characters. The behavior of Samurai can be altered using a variety of flags:
+By default, Samurai will generate a single password of 12 characters long, not capitalized, without numbers and without special characters. The behavior of Samurai can be altered using a variety of flags:
 
 | Flag | Argument | Description                                        |
 |------|----------|----------------------------------------------------|
@@ -41,56 +41,56 @@ By default, Samurai will generate a single password of 10 characters long, not c
 | -h   | none     | Show a usage description                           |
 
 
-Some examples to get you on your way:
+### Examples
 
 ```
 $ samurai
 
-	gosyxycamo
+jariwufebivo
 
 $ samurai -x 3
 
-	mepahehav
-	lovotezeqe
-	mysipapyki
+posafucalyqi
+defunoqutiqa
+wabajyqudixu
 
-$ samurai -l 5
+$ samurai -l 20
 
-	pyciz
+sumiryjumexusoloduxo
+
+$ samurai -n 3
+
+vakocitaf870
 
 $ samurai -c
 
-	Betevawony
+Zolacotehefa
 
 $ samurai -s
 
-	dafoqalip!
-
-$ samurai -n
-
-	tunajyka42
+tybubasefyk!
 
 $ samurai -x 6 -l 12 -c -s -n
 
-	Rajotifez^21
-	Gybajecog$11
-	Qipaqiwit#28
-	Zowitucox?43
-	Ryvyliman%83
-	Kalicywom-20
+Garepuhucuhabywu!053
+Pymukydulerosini$180
+Qisofykifejyvipo$412
+Jujavitydezijyha$521
+Kapuqikoweqolyje%883
+Cifehytyvehaxobu%992
 
 $ samurai -h
 
-	Samurai: Human Readable Password Generator
+Samurai: Human Readable Password Generator
 
-	Usage: samurai [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]
+Usage: samurai [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]
 
-	-h:		 Print this help page.
-	-x <int>:	 Set the amount of generated passwords.
-	-l <int>:	 Set the length of the generated password.
-	-c:		 Enable capitalization of the password.
-	-s:		 Add a special character to the password.
-	-n:		 Add numbers to the password.
+-h:		 Print this help page.
+-x <int>:	 Set the amount of generated passwords.
+-l <int>:	 Set the length of the generated passwords.
+-n <int>:	 Set the amount of numbers in the generated passwords.
+-c:		 Enable capitalization of the generated passwords.
+-s:		 Add a special character to the generated passwords.
 ```
 
 Good luck!

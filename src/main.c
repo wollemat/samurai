@@ -35,7 +35,7 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
 }
 
 int main(int argc, char **argv) {
-    unsigned char *pwd = generate_password(10, true, true, true, NULL);
+    unsigned char *pwd = generate_password(10, true, true, true, time(0));
 
     printf("%s\n", pwd);
 

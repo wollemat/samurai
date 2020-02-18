@@ -35,7 +35,7 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
 }
 
 int main(int argc, char **argv) {
-    int length = 10;
+    int length = 12;
     int capitalized = FALSE;
     int specialized = FALSE;
     int numbered = FALSE;

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 const int true = 1;
 const int false = 0;
@@ -17,7 +18,7 @@ unsigned char *generate_password(int length, int capitalized, int specialized) {
         sign = (sign) ? false : true;
     }
 
-    if (capitalized) pwd[0] = 'A';
+    if (capitalized) pwd[0] = toupper(pwd[0]);
     if (specialized) pwd[length] = specials[0];
 
     return pwd;

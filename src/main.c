@@ -9,10 +9,11 @@ const int false = 0;
 
 const char *vowels = "aeiouy";
 const char *consonants = "bcdfghjklmnpqrstvwxz";
+const char *numbers = "0123456789";
 const char *specials = "!@#$%^&*-+?";
 
 unsigned char *generate_password(int length, int capitalized, int specialized, int numbered, time_t seed) {
-    unsigned char* pwd = calloc(length + 1, sizeof(char));
+    unsigned char *pwd = calloc(length + 1, sizeof(char));
     int sign = true;
     srand(time(&seed));
 
@@ -22,13 +23,19 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
     }
 
     if (capitalized) pwd[0] = toupper(pwd[0]);
-    if (specialized) pwd[length] = specials[rand() % strlen(specials)];
+
+    if (numbered) {
+        pwd[length - 1] = numbers[rand() % strlen(numbers)];
+        pwd[length - 2] = numbers[rand() % strlen(numbers)];
+
+        if (specialized) pwd[length - 3] = specials[rand() % strlen(specials)];
+    } else if (specialized) pwd[length - 1] = specials[rand() % strlen(specials)];
 
     return pwd;
 }
 
 int main(int argc, char **argv) {
-    unsigned char *pwd = generate_password(12, true, true, true, NULL);
+    unsigned char *pwd = generate_password(10, true, true, true, NULL);
 
     printf("%s\n", pwd);
 

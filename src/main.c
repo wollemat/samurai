@@ -12,10 +12,10 @@ const char *consonants = "bcdfghjklmnpqrstvwxz";
 const char *numbers = "0123456789";
 const char *specials = "!@#$%^&*-+?";
 
-unsigned char *generate_password(int length, int capitalized, int specialized, int numbered, time_t seed) {
+unsigned char *generate_password(int length, int capitalized, int specialized, int numbered) {
     unsigned char *pwd = calloc(length + 1, sizeof(char));
     int sign = true;
-    srand(time(&seed));
+    srand(time(0));
 
     for (int i = 0; i < length; i++) {
         pwd[i] = (sign) ? consonants[rand() % strlen(consonants)] : vowels[rand() % strlen(vowels)];
@@ -35,10 +35,40 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
 }
 
 int main(int argc, char **argv) {
-    unsigned char *pwd = generate_password(10, true, true, true, time(0));
+    int length = 10;
+    int capitalized = false;
+    int specialized = false;
+    int numbered = false;
 
+    if (argc > 1 && strcmp(argv[1], "-h") == 0) {
+        printf("Smutsia: Human Readable Password Generator\n\n");
+        printf("Usage: smutsia [-h] [-l <length>] [-c] [-s] [-n]\n\n");
+        printf("-h:\t\t Print this help page.\n");
+        printf("-l <length>:\t Set the length of the generated password.\n");
+        printf("-c:\t\t Enable capitalization of the password.\n");
+        printf("-s:\t\t Add a special character to the password.\n");
+        printf("-h:\t\t Add numbers to the password.\n");
+        exit(EXIT_SUCCESS);
+    }
+
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "-c") == 0) capitalized = true;
+        else if (strcmp(argv[i], "-s") == 0) specialized = true;
+        else if (strcmp(argv[i], "-n") == 0) numbered = true;
+        else if (strcmp(argv[i], "-l") == 0) {
+            i++;
+            if (sscanf(argv[i], "%d", &length) == 0) {
+                printf("\"%s\" is not an integer value.\n", argv[i]);
+                exit(EXIT_FAILURE);
+            }
+        } else {
+            printf("\"%s\" is not a valid flag.\n\nUsage: smutsia [-h] [-l <length>] [-c] [-s] [-n]\n", argv[i]);
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    unsigned char *pwd = generate_password(length, capitalized, specialized, numbered);
     printf("%s\n", pwd);
-
     free(pwd);
 
     exit(EXIT_SUCCESS);

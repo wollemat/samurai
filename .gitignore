@@ -13,8 +13,5 @@ _deps
 cmake-build-debug
 *.cbp
 
-# Ignore build application
-samurai
-
 # Ignore generated files
 bin/

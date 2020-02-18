@@ -44,10 +44,10 @@ int main(int argc, char **argv) {
         printf("Usage: samurai [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]\n\n");
         printf("-h:\t\t Print this help page.\n");
         printf("-x <int>:\t Set the amount of generated passwords.\n");
-        printf("-l <int>:\t Set the length of the generated password.\n");
-        printf("-c:\t\t Enable capitalization of the password.\n");
-        printf("-s:\t\t Add a special character to the password.\n");
-        printf("-n:\t\t Add numbers to the password.\n");
+        printf("-l <int>:\t Set the length of the generated passwords.\n");
+        printf("-n <int>:\t Set the amount of numbers in the generated passwords.\n");
+        printf("-c:\t\t Enable capitalization of the generated passwords.\n");
+        printf("-s:\t\t Add a special character to the generated passwords.\n");
         exit(EXIT_SUCCESS);
     }
 

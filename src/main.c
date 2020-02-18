@@ -39,12 +39,14 @@ int main(int argc, char **argv) {
     int capitalized = false;
     int specialized = false;
     int numbered = false;
+    int num = 1;
 
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
         printf("Smutsia: Human Readable Password Generator\n\n");
-        printf("Usage: smutsia [-h] [-l <length>] [-c] [-s] [-n]\n\n");
+        printf("Usage: smutsia [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]\n\n");
         printf("-h:\t\t Print this help page.\n");
-        printf("-l <length>:\t Set the length of the generated password.\n");
+        printf("-x <int>:\t Set the amount of generated passwords.\n");
+        printf("-l <int>:\t Set the length of the generated password.\n");
         printf("-c:\t\t Enable capitalization of the password.\n");
         printf("-s:\t\t Add a special character to the password.\n");
         printf("-h:\t\t Add numbers to the password.\n");
@@ -61,15 +63,23 @@ int main(int argc, char **argv) {
                 printf("\"%s\" is not an integer value.\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
+        } else if (strcmp(argv[i], "-x") == 0) {
+            i++;
+            if (sscanf(argv[i], "%d", &num) == 0) {
+                printf("\"%s\" is not an integer value.\n", argv[i]);
+                exit(EXIT_FAILURE);
+            }
         } else {
-            printf("\"%s\" is not a valid flag.\n\nUsage: smutsia [-h] [-l <length>] [-c] [-s] [-n]\n", argv[i]);
+            printf("\"%s\" is not a valid flag. Run `smutsia -h` for usage information.\n", argv[i]);
             exit(EXIT_FAILURE);
         }
     }
 
-    unsigned char *pwd = generate_password(length, capitalized, specialized, numbered);
-    printf("%s\n", pwd);
-    free(pwd);
+    for (int i = 0; i < num; i++) {
+        unsigned char *pwd = generate_password(length, capitalized, specialized, numbered);
+        printf("%s\n", pwd);
+        free(pwd);
+    }
 
     exit(EXIT_SUCCESS);
 }

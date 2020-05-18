@@ -43,9 +43,9 @@ int main(int argc, char **argv) {
         printf("Samurai: Human Readable Password Generator\n\n");
         printf("Usage: samurai [-h] [-x <int>] [-l <int>] [-c] [-s] [-n]\n\n");
         printf("-h:\t\t Print this help page.\n");
-        printf("-x <int>:\t Set the amount of generated passwords.\n");
-        printf("-l <int>:\t Set the length of the generated passwords.\n");
-        printf("-n <int>:\t Set the amount of numbers in the generated passwords.\n");
+        printf("-x <int>:\t Set the amount of generated passwords. Defaults to 1.\n");
+        printf("-l <int>:\t Set the length of the generated passwords. Defaults to 12.\n");
+        printf("-n <int>:\t Set the amount of numbers in the generated passwords. Defaults to 0.\n");
         printf("-c:\t\t Enable capitalization of the generated passwords.\n");
         printf("-s:\t\t Add a special character to the generated passwords.\n");
         exit(EXIT_SUCCESS);

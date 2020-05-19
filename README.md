@@ -1,6 +1,6 @@
 
-<p  align="center"> <img src="./icon.png" alt="icon" width="100" height="100" /> </p>
-<h1 align="center" font-weight: bold>Samurai</h1>
+<p  align="center"> <img src="doc/icon.png" alt="Icon" width="100" height="100" /> </p>
+<h3 align="center" font-weight="bold">Samurai</h3>
 <h4 align="center">"The Human Readable Password Generator"</h4>
 
 <p align="center">
@@ -25,6 +25,8 @@
 ## About
 
 **Samurai** is a simple password generator for the command line. **Simple** is the magic word, the source is elegant and clean but additionally the generated passwords are human readable, pronouncable and easily typed. Most of the benefits of a long and strong password with less of the drawbacks.
+
+<p align="center"> <img src="doc/recording.svg" alt="Tutorial GIF" width="100%" height="auto"/> </p>
 
 ## Building
 

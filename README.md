@@ -1,6 +1,6 @@
 
 <p  align="center"> <img src="doc/icon.png" alt="Icon" width="100" height="100" /> </p>
-<h3 align="center" font-weight="bold">Samurai</h3>
+<h1 align="center">Samurai</h3>
 <h4 align="center">"The Human Readable Password Generator"</h4>
 
 <p align="center">
@@ -36,15 +36,20 @@ To get a build of Samurai up and running on your local machine the following too
 * A working installment of CMake
 * A working installment of Make
 
-Building is as simple as running the following command in the root of the project:
+Building is as simple as running the following commands in the root of the project:
 
 ```
-$ cmake . && make
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
 ```
+
+This will create a `build` directory in which all the build files will be situated. If done correctly the executable binary `samurai` is created in the `build` folder.
 
 ## Deployment
 
-Running Samurai is just as easy as building it. Simply run the build executable and receive your generated password.
+Running Samurai is just as easy as building it. You can directly run the executable in the `build` directory or add the binary to your `PATH` and run it like any other program. Now, you can simply run `samurai` and receive your generated password.
 
 ```
 $ samurai
@@ -120,14 +125,13 @@ Good luck!
 ## Contributors
 
 * **Frederik Christian Slothouber** - *Initial work* - [wollemat](https://github.com/wollemat)
-* Icon made by [monkik](https://www.flaticon.com/authors/monkik) from [www.flaticon.com](https://www.flaticon.com)
 
 ## Donate
 
-Please consider [donating](https://paypal.me/wollemat) if you found [Samurai](https://github.com/wollemat/samurai) helpful in any shape or form. A small contribution comes a long way and is much appreciated.
+Please consider [donating](https://paypal.me/wollemat) if you found Samurai helpful in any shape or form. A small contribution comes a long way and is much appreciated.
 
 ## License
 
-This project and its code are released under the [MIT license](LICENSE.md). Please have a look at the [LICENSE.md](LICENSE.md) for more details.
-
+<p align="center">This project and its code are released under the MIT license. Please have a look at the <a href="LICENSE.md">LICENSE.md</a> for more details.</p>
+<p align="center">Icon made by <a href="https://www.flaticon.com/authors/monkik">monkik</a> from www.flaticon.com</p>
 <p align="center">copyright © <a href="https://github.com/wollemat">wollemat</a></p>

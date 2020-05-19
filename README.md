@@ -5,7 +5,7 @@
 
 <p align="center">
     <a href="https://travis-ci.com/github/wollemat/samurai/builds">
-    <img src="https://travis-ci.com/wollemat/samurai.svg?branch=master" alt="Build Status">
+    <img src="https://travis-ci.com/wollemat/samurai.svg?token=k1suUDzcyzCJa2jrVp7S&branch=master" alt="Build Status">
     <a href="LICENSE.md">
     <img src="https://img.shields.io/badge/license-MIT-yellow" alt="License">
     <a href="https://paypal.me/wollemat">

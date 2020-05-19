@@ -1,11 +1,32 @@
 
-<p align="center"> <img src="./icon.png" alt="icon" width="100" height="100" /> </p>
+<p  align="center"> <img src="./icon.png" alt="icon" width="100" height="100" /> </p>
+<h1 align="center" font-weight: bold>Samurai</h1>
+<h4 align="center">"The Human Readable Password Generator"</h4>
 
-# Samurai
+<p align="center">
+    <a href="https://travis-ci.com/github/wollemat/samurai/builds">
+    <img src="https://travis-ci.com/wollemat/samurai.svg?branch=master" alt="Build Status">
+    <a href="LICENSE.md">
+    <img src="https://img.shields.io/badge/license-MIT-yellow" alt="License">
+    <a href="https://paypal.me/wollemat">
+    <img src="https://img.shields.io/badge/donate-PayPal-orange" alt="Donate">
+</p>
+      
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#building">Building</a> •
+  <a href="#deployment">Deployment</a> •
+  <a href="#examples">Examples</a> •
+  <a href="#contributors">Contributors</a> •
+  <a href="#donate">Donate</a> •
+  <a href="#license">License</a>
+</p>
 
-Samurai is a simple password generator for the command line. Simple is the magic word, the source is very simple and clean but additionally the generated passwords are human readable, pronouncable and easily typed. Most of the benefits of a long and strong password with less drawbacks. No more 30 character password strings of garbled text, numbers and special characters that only computers can distinguish.
+## About
 
-## Getting Started
+**Samurai** is a simple password generator for the command line. **Simple** is the magic word, the source is elegant and clean but additionally the generated passwords are human readable, pronouncable and easily typed. Most of the benefits of a long and strong password with less of the drawbacks.
+
+## Building
 
 To get a build of Samurai up and running on your local machine the following tools are required:
 
@@ -38,7 +59,9 @@ By default, Samurai will generate a single password of 12 characters long, not c
 | -n   | none     | Add numbers to the generated passwords             |
 | -h   | none     | Show a usage description                           |
 
-### Examples
+## Examples
+
+Some examples for you.
 
 ```
 $ samurai
@@ -96,3 +119,13 @@ Good luck!
 
 * **Frederik Christian Slothouber** - *Initial work* - [wollemat](https://github.com/wollemat)
 * Icon made by [monkik](https://www.flaticon.com/authors/monkik) from [www.flaticon.com](https://www.flaticon.com)
+
+## Donate
+
+Please consider [donating](https://paypal.me/wollemat) if you found [Samurai](https://github.com/wollemat/samurai) helpful in any shape or form. A small contribution comes a long way and is much appreciated.
+
+## License
+
+This project and its code are released under the [MIT license](LICENSE.md). Please have a look at the [LICENSE.md](LICENSE.md) for more details.
+
+<p align="center">copyright © <a href="https://github.com/wollemat">wollemat</a></p>

@@ -17,6 +17,7 @@
   <a href="#building">Building</a> •
   <a href="#deployment">Deployment</a> •
   <a href="#examples">Examples</a> •
+  <a href="#contributing">Contributing</a> •
   <a href="#contributors">Contributors</a> •
   <a href="#donate">Donate</a> •
   <a href="#license">License</a>
@@ -149,6 +150,14 @@ jogabufyke93
 ```
 
 Good Luck & Be Safe!
+
+## Contributing
+
+Feel free to help me out and make your mark on this project. 
+No program is ever perfect and Samurai can always be improved upon.
+If you feel like a feature is missing or you encounter a bug, please report it by creating an [issue](https://github.com/wollemat/samurai/issues/new).
+Before doing this please read the [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contributing](CONTRIBUTING.md) guidelines.
+I look forward to working with you.
 
 ## Contributors
 

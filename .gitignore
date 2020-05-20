@@ -14,4 +14,4 @@ cmake-build-debug
 *.cbp
 
 # Binary
-build/samurai
+bin/samurai

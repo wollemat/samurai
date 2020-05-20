@@ -65,8 +65,9 @@ $ cmake ..
 $ make
 ```
 
-This will create a `build` directory in which all the build files will be situated. 
-If done correctly the executable binary `samurai` is created in the `build` folder.
+This will create a `build` directory in which CMake and Make will run.
+If done correctly a directory called `bin` is created in the root of the project. 
+The executable binary `samurai` is placed inside the this `bin` folder.
 
 ## Deployment
 

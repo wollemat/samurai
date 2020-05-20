@@ -42,7 +42,7 @@ int bulk = 10;
 int pump = 65536;
 int seed = 0;
 
-unsigned char *generate_password(int length, int capitalized, int specialized, int number_amount) {
+unsigned char *generate_password() {
     unsigned char *pwd = calloc(length + 1, sizeof(char));
     int sign = TRUE;
 
@@ -51,12 +51,12 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
         sign = (sign) ? FALSE : TRUE;
     }
 
-    for (int i = 0; i < number_amount; i++) {
+    for (int i = 0; i < suffix; i++) {
         pwd[length - 1 - i] = numbers[rand() % strlen(numbers)];
     }
 
     if (capitalized) pwd[0] = toupper(pwd[0]);
-    if (specialized) pwd[length - 1 - number_amount] = specials[rand() % strlen(specials)];
+    if (specialized) pwd[length - 1 - suffix] = specials[rand() % strlen(specials)];
 
     return pwd;
 }
@@ -145,7 +145,7 @@ void execute() {
 
     for (int i = 0; i < bulk; i++) {
         for (int j = 0; j < pump; j++) rand();
-        unsigned char *pwd = generate_password(length, capitalized, specialized, suffix);
+        unsigned char *pwd = generate_password();
         printf("%s\n", pwd);
         free(pwd);
     }

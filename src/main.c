@@ -37,9 +37,9 @@ int main(int argc, char **argv) {
     int length = 12;
     int capitalized = FALSE;
     int specialized = FALSE;
-    int number_amount = 0;
-    int password_amount = 1;
-    int iterate = 128;
+    int suffix = 2;
+    int bulk = 10;
+    int pump = 65536;
     int seed = clock();
 
     if (argc > 1 && strcmp(argv[1], "-v") == 0) {
@@ -49,16 +49,21 @@ int main(int argc, char **argv) {
 
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
         printf("Samurai: The Human Readable Password Generator\n\n");
-        printf("Usage: samurai [-h] [-x <int>] [-i <int>] [--seed <int>] [-l <int>] [-c] [-s] [-n]\n\n");
-        printf("-h:\t\t Print this help page.\n");
-        printf("-v:\t\t Print version.\n");
-        printf("-x <int>:\t Set the amount of generated passwords. Defaults to %d.\n", password_amount);
-        printf("-i <int>:\t Iterate this many times before generating each password. Defaults to %d.\n", iterate);
-        printf("--seed <int>:\t Use this number as seed. Defaults to clock ticks since program start.\n");
-        printf("-l <int>:\t Set the length of the generated passwords. Defaults to %d.\n", length);
-        printf("-n <int>:\t Set the amount of numbers in the generated passwords. Defaults to %d.\n", number_amount);
-        printf("-c:\t\t Enable capitalization of the generated passwords.\n");
-        printf("-s:\t\t Add a special character to the generated passwords.\n");
+
+        printf("Usage: samurai -v | -h | [[-s <int>] [-p <int>] [-b <int>] [-l <int>] [-n <int>] -c -s]\n\n");
+
+        printf("-v, --version\n\tPrint the program's version.\n\n");
+        printf("-h, --help\n\tPrint this help message.\n\n");
+
+        printf("-s, --seed\n\tSet the seed used for random number generation. Defaults to the amount of clock ticks since program start.\n\n");
+        printf("-p, --pump\n\tSet how many times the random number generator is iterated over before generating each password. Defaults to %d\n\n", pump);
+        printf("-b, --bulk\n\tSet how many passwords are generated. Defaults to %d.\n\n", bulk);
+
+        printf("-l, --length\n\tSet the character length of each password. Defaults to %d.\n\n", length);
+        printf("-n, --numbers\n\tSet the digit length of the numbered suffix, can be zero. Defaults to %d\n\n", suffix);
+
+        printf("-c, --capitalised\n\tCapitalise passwords.\n\n");
+        printf("-@, --specialised\n\tUse special characters in the passwords.\n");
         exit(EXIT_SUCCESS);
     }
 
@@ -67,7 +72,7 @@ int main(int argc, char **argv) {
         else if (strcmp(argv[i], "-s") == 0) specialized = TRUE;
         else if (strcmp(argv[i], "-n") == 0) {
             i++;
-            if (sscanf(argv[i], "%d", &number_amount) == 0) {
+            if (sscanf(argv[i], "%d", &suffix) == 0) {
                 printf("\"%s\" is not an integer value.\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
@@ -79,13 +84,13 @@ int main(int argc, char **argv) {
             }
         } else if (strcmp(argv[i], "-x") == 0) {
             i++;
-            if (sscanf(argv[i], "%d", &password_amount) == 0) {
+            if (sscanf(argv[i], "%d", &bulk) == 0) {
                 printf("\"%s\" is not an integer value.\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
         } else if (strcmp(argv[i], "-i") == 0) {
             i++;
-            if (sscanf(argv[i], "%d", &iterate) == 0) {
+            if (sscanf(argv[i], "%d", &pump) == 0) {
                 printf("\"%s\" is not an integer value.\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
@@ -103,12 +108,12 @@ int main(int argc, char **argv) {
 
     srand(seed);
 
-    for (int i = 0; i < password_amount; i++) {
-        for (int j = 0; j < iterate; j++) {
+    for (int i = 0; i < bulk; i++) {
+        for (int j = 0; j < pump; j++) {
             rand();
         }
 
-        unsigned char *pwd = generate_password(length, capitalized, specialized, number_amount);
+        unsigned char *pwd = generate_password(length, capitalized, specialized, suffix);
         printf("%s\n", pwd);
         free(pwd);
     }

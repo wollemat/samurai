@@ -35,8 +35,8 @@ const char *numbers = "0123456789";
 const char *specials = "!@#$%^&*-+?";
 
 int length = 12;
-int capitalized = FALSE;
-int specialized = FALSE;
+int capitalized = 0;
+int specialized = 0;
 int suffix = 2;
 int bulk = 10;
 int pump = 65536;
@@ -61,7 +61,7 @@ unsigned char *generate_password(int length, int capitalized, int specialized, i
     return pwd;
 }
 
-int check_flag(char* arg, const char* flag_short, const char* flag_long) {
+int check_flag(char *arg, const char *flag_short, const char *flag_long) {
     return strcmp(arg, flag_short) == 0 || strcmp(arg, flag_long) == 0;
 }
 
@@ -90,18 +90,19 @@ void print_help() {
     exit(EXIT_SUCCESS);
 }
 
-void print_missing_param(char* flag) {
+void print_missing_param(char *flag) {
     printf("The flag \"%s\" expects a parameter.\n", flag);
     exit(EXIT_FAILURE);
 }
 
-void print_invalid_integer(char* str) {
+void print_invalid_integer(char *str) {
     printf("\"%s\" is not an integer value.\n", str);
     exit(EXIT_FAILURE);
 }
 
-void print_invalid_flag(char* flag) {
-    printf("\"%s\" is not a valid flag. Run `samurai %s` or `samurai %s` for usage information.\n", flag, flag_help_short, flag_help_long);
+void print_invalid_flag(char *flag) {
+    printf("\"%s\" is not a valid flag. Run `samurai %s` or `samurai %s` for usage information.\n", flag,
+           flag_help_short, flag_help_long);
     exit(EXIT_FAILURE);
 }
 

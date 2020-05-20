@@ -96,43 +96,56 @@ Some examples for you to get you on your way.
 Use them as inspiration and obviously DO NOT use these passwords yourselves.
 
 ```
- $ samurai
+$ samurai
 
-fgsfgjdfjdkshfjksdf
-dfgajsdgfajdgfjkadg
-dsfgadfgahsdfghdsfd
-sdfghdasgfhasgfdahd
-
+nezevitygi63
+rocalurado06
+qyjihagabo76
+hasojodugo31
+bimijusira87
+nutitubuju65
+bowyquzixu84
+wodekobyke35
+homicenobi94
+napetewily52
 ```
 
 ```
- $ samurai --seed 1234 --bulk 3 --capitalised --sepcialised 
+$ samurai --capitalised --specialised
 
-fgsfgjdfjdkshfjksdf
-dfgajsdgfajdgfjkadg
-dsfgadfgahsdfghdsfd
-sdfghdasgfhasgfdahd
-
+Sakobeqos*63
+Jyxezahin*64
+Civosaqop?16
+Kitusojur-32
+Pexutasew%25
+Husubisis#98
+Nuqakalod!10
+Golomahul*04
+Gycesamun$17
+Nuqonosyq?80
 ```
 
 ```
- $ samurai --seed 12345 --iterate 123456789
+$ samurai --bulk 3 --length 30 --numbers 5
 
-fgsfgjdfjdkshfjksdf
-dfgajsdgfajdgfjkadg
-dsfgadfgahsdfghdsfd
-sdfghdasgfhasgfdahd
-
+hanolurygaxapomebideqypoz33263
+pexepyqidudisikalepyroqen95252
+tahanabapixyrivemalibygud23946
 ```
 
 ```
- $ samurai --length 25 --numbers 4 --capitalised --specialised
+$ samurai --seed 1234 --pump 100000000
 
-fgsfgjdfjdkshfjksdf
-dfgajsdgfajdgfjkadg
-dsfgadfgahsdfghdsfd
-sdfghdasgfhasgfdahd
-
+dacycicoxi07
+relabylene72
+hivepuwovu76
+wejuvacepi35
+wysybopitu00
+tyguraxijy85
+bacewepity68
+cudisypoda56
+gisoxyviri56
+jogabufyke93
 ```
 
 Good Luck & Be Safe!

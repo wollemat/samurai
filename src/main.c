@@ -29,8 +29,8 @@ const char *flag_specialised_long = "--specialised";
 const int TRUE = 1;
 const int FALSE = 0;
 
-const char *vowels = "aeiouy";
-const char *consonants = "bcdfghjklmnpqrstvwxz";
+const char *vowels = "aeiou";
+const char *consonants = "bcdfghjklmnpqrstvwxyz";
 const char *numbers = "0123456789";
 const char *specials = "!@#$%^&*-+?";
 

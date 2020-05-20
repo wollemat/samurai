@@ -6,6 +6,26 @@
 
 const char *version = "V1.0.4";
 
+const char* flag_version_short = "-v";
+const char* flag_help_short = "-h";
+const char* flag_seed_short = "-s";
+const char* flag_pump_short = "-p";
+const char* flag_bulk_short = "-b";
+const char* flag_length_short = "-l";
+const char* flag_numbers_short = "-n";
+const char* flag_capitalised_short = "-c";
+const char* flag_specialised_short = "-@";
+
+const char* flag_version_long = "--version";
+const char* flag_help_long = "--help";
+const char* flag_seed_long = "--seed";
+const char* flag_pump_long = "--pump";
+const char* flag_bulk_long = "--bulk";
+const char* flag_length_long = "--length";
+const char* flag_numbers_long = "--numbers";
+const char* flag_capitalised_long = "--capitalised";
+const char* flag_specialised_long = "--specialised";
+
 const int TRUE = 1;
 const int FALSE = 0;
 
@@ -52,18 +72,18 @@ int main(int argc, char **argv) {
 
         printf("Usage: samurai -v | -h | [[-s <int>] [-p <int>] [-b <int>] [-l <int>] [-n <int>] -c -s]\n\n");
 
-        printf("-v, --version\n\tPrint the program's version.\n\n");
-        printf("-h, --help\n\tPrint this help message.\n\n");
+        printf("%s, %s\n\tPrint the program's version.\n\n", flag_version_short, flag_version_long);
+        printf("%s, %s\n\tPrint this help message.\n\n", flag_help_short, flag_help_long);
 
-        printf("-s, --seed\n\tSet the seed used for random number generation. Defaults to the amount of clock ticks since program start.\n\n");
-        printf("-p, --pump\n\tSet how many times the random number generator is iterated over before generating each password. Defaults to %d\n\n", pump);
-        printf("-b, --bulk\n\tSet how many passwords are generated. Defaults to %d.\n\n", bulk);
+        printf("%s, %s\n\tSet the seed used for random number generation. Defaults to the amount of clock ticks since program start.\n\n", flag_seed_short, flag_seed_long);
+        printf("%s, %s\n\tSet how many times the random number generator is iterated over before generating each password. Defaults to %d\n\n", flag_pump_short, flag_pump_long, pump);
+        printf("%s, %s\n\tSet how many passwords are generated. Defaults to %d.\n\n", flag_bulk_short, flag_bulk_long, bulk);
 
-        printf("-l, --length\n\tSet the character length of each password. Defaults to %d.\n\n", length);
-        printf("-n, --numbers\n\tSet the digit length of the numbered suffix, can be zero. Defaults to %d\n\n", suffix);
+        printf("%s, %s\n\tSet the character length of each password. Defaults to %d.\n\n", flag_length_short, flag_length_long, length);
+        printf("%s, %s\n\tSet the digit length of the numbered suffix, can be zero. Defaults to %d\n\n", flag_numbers_short, flag_numbers_long, suffix);
 
-        printf("-c, --capitalised\n\tCapitalise passwords.\n\n");
-        printf("-@, --specialised\n\tUse special characters in the passwords.\n");
+        printf("%s, %s\n\tCapitalise passwords.\n\n", flag_capitalised_short, flag_capitalised_long);
+        printf("%s, %s\n\tUse special characters in the passwords.\n", flag_specialised_short, flag_specialised_long);
         exit(EXIT_SUCCESS);
     }
 

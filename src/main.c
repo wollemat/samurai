@@ -4,6 +4,8 @@
 #include <string.h>
 #include <time.h>
 
+const char *version = "V1.0.4";
+
 const int TRUE = 1;
 const int FALSE = 0;
 
@@ -40,10 +42,16 @@ int main(int argc, char **argv) {
     int iterate = 128;
     int seed = clock();
 
+    if (argc > 1 && strcmp(argv[1], "-v") == 0) {
+        printf("This is version %s\n", version);
+        exit(EXIT_SUCCESS);
+    }
+
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
         printf("Samurai: The Human Readable Password Generator\n\n");
         printf("Usage: samurai [-h] [-x <int>] [-i <int>] [--seed <int>] [-l <int>] [-c] [-s] [-n]\n\n");
         printf("-h:\t\t Print this help page.\n");
+        printf("-v:\t\t Print version.\n");
         printf("-x <int>:\t Set the amount of generated passwords. Defaults to %d.\n", password_amount);
         printf("-i <int>:\t Iterate this many times before generating each password. Defaults to %d.\n", iterate);
         printf("--seed <int>:\t Use this number as seed. Defaults to clock ticks since program start.\n");

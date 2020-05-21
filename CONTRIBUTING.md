@@ -110,7 +110,7 @@ Speaking of labels, we have a few. Issues should always have 2 types of labels: 
 
 There are 3 status labels:
 
-* [Pending](https://github.com/wollemat/samurai/issues?q=label%3A%22status%3A+pending%22+) -  
+* [Pending](https://github.com/wollemat/samurai/issues?q=label%3A%22status%3A+pending%22+) - 
 Not been picked up yet by anyone and is not currently tackled. 
 You are free to pick any you want.
 Every issue starts off with this status.

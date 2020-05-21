@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-const char *version = "V1.0.4";
+const char *version = "V1.1.0";
 
 const char *flag_version_short = "-v";
 const char *flag_help_short = "-h";

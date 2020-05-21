@@ -50,6 +50,14 @@ What is it that you want?
 Why do you need it?
 Why is it desirable?
 
+## Having a burning Question?
+
+We are open to relevant questions and constructive discussions. 
+Do however, give a rigorous description. 
+Why do you ask this question?
+What can we do to help you know?
+What could we have done to avoid this question to begin with?
+
 ## Submitting an Issue
 
 Issues are created, used and structured in a specific way in Samurai.

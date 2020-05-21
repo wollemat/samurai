@@ -113,6 +113,12 @@ void print_invalid_flag(char *flag) {
     exit(EXIT_FAILURE);
 }
 
+int read_integer(int* param, const char* arg) {
+    char *ptr;
+    *param = (int) strtol(arg, &ptr, 10);
+    return ptr == arg;
+}
+
 void read_params(int argc, char **argv) {
     seed = clock();
 
@@ -129,23 +135,23 @@ void read_params(int argc, char **argv) {
         } else if (check_flag(argv[i], flag_numbers_short, flag_numbers_long)) {
             if (argc <= i + 1) print_missing_param(argv[i]);
             i++;
-            if (sscanf(argv[i], "%d", &suffix) == 0) print_invalid_integer(argv[i]);
+            if (read_integer(&suffix, argv[i])) print_invalid_integer(argv[i]);
         } else if (check_flag(argv[i], flag_length_short, flag_length_long)) {
             if (argc <= i + 1) print_missing_param(argv[i]);
             i++;
-            if (sscanf(argv[i], "%d", &length) == 0) print_invalid_integer(argv[i]);
+            if (read_integer(&length, argv[i])) print_invalid_integer(argv[i]);
         } else if (check_flag(argv[i], flag_bulk_short, flag_bulk_long)) {
             if (argc <= i + 1) print_missing_param(argv[i]);
             i++;
-            if (sscanf(argv[i], "%d", &bulk) == 0) print_invalid_integer(argv[i]);
+            if (read_integer(&bulk, argv[i])) print_invalid_integer(argv[i]);
         } else if (check_flag(argv[i], flag_pump_short, flag_pump_long)) {
             if (argc <= i + 1) print_missing_param(argv[i]);
             i++;
-            if (sscanf(argv[i], "%d", &pump) == 0) print_invalid_integer(argv[i]);
+            if (read_integer(&pump, argv[i])) print_invalid_integer(argv[i]);
         } else if (check_flag(argv[i], flag_seed_short, flag_seed_long)) {
             if (argc <= i + 1) print_missing_param(argv[i]);
             i++;
-            if (sscanf(argv[i], "%d", &seed) == 0) print_invalid_integer(argv[i]);
+            if (read_integer(&seed, argv[i])) print_invalid_integer(argv[i]);
         } else print_invalid_flag(argv[i]);
     }
 }

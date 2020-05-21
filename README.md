@@ -162,6 +162,7 @@ I look forward to working with you.
 ## Contributors
 
 * **Frederik Christian Slothouber** - *Initial work* - [wollemat](https://github.com/wollemat)
+* **Fabian Mastenbroek** - *Random number generation* - [fabianishere](https://github.com/fabianishere)
 
 ## Donate
 

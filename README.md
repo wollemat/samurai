@@ -86,10 +86,11 @@ However, behaviour can be altered using a variety of flags:
 | -s | --seed | int | [clock](https://www.gnu.org/software/libc/manual/html_node/CPU-Time.html) | The seed used for random number generation |
 | -p | --pump | int | 65536 | How many times is iterated before generating each password |
 | -b | --bulk | int | 10 | How many passwords are generated |
+| -C | --copy | none | none | Overrides --bulk and instead will generate a single password. This password is copied to the clipboard however instead of printed to the terminal |
 | -l | --length | int | 12 | Set the character length of each password |
 | -n | --numbers | int | 2 | Set the digit length of the number suffix, can be zero |
 | -c | --capitalised | none | false | Capitalise the passwords |
-| -@ | --specialised | none | false | Use a special character |
+| -S | --specialised | none | false | Use a special character |
 
 ## Examples
 

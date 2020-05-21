@@ -11,16 +11,18 @@ const char *flag_help_short = "-h";
 const char *flag_seed_short = "-s";
 const char *flag_pump_short = "-p";
 const char *flag_bulk_short = "-b";
+const char *flag_copy_short = "-C";
 const char *flag_length_short = "-l";
 const char *flag_numbers_short = "-n";
 const char *flag_capitalised_short = "-c";
-const char *flag_specialised_short = "-@";
+const char *flag_specialised_short = "-S";
 
 const char *flag_version_long = "--version";
 const char *flag_help_long = "--help";
 const char *flag_seed_long = "--seed";
 const char *flag_pump_long = "--pump";
 const char *flag_bulk_long = "--bulk";
+const char *flag_copy_long = "--copy";
 const char *flag_length_long = "--length";
 const char *flag_numbers_long = "--numbers";
 const char *flag_capitalised_long = "--capitalised";
@@ -41,6 +43,7 @@ int suffix = 2;
 int bulk = 10;
 int pump = 65536;
 int seed = 0;
+int copied = 0;
 
 unsigned char *generate_password() {
     unsigned char *pwd = calloc(length + 1, sizeof(char));
@@ -72,7 +75,9 @@ void print_version() {
 
 void print_help() {
     printf("Samurai: The Human Readable Password Generator\n\n");
-    printf("Usage: samurai -v | -h | [[-s <int>] [-p <int>] [-b <int>] [-l <int>] [-n <int>] -c -s]\n\n");
+    printf("Usage: samurai %s | %s | [[%s <int>] [%s <int>] [%s <int> | %s ] [%s <int>] [%s <int>] %s %s]\n\n",
+           flag_version_short, flag_help_short, flag_seed_short, flag_pump_short, flag_bulk_short, flag_copy_short,
+           flag_length_short, flag_numbers_short, flag_capitalised_short, flag_specialised_short);
     printf("%s, %s\n\tPrint the program's version.\n\n", flag_version_short, flag_version_long);
     printf("%s, %s\n\tPrint this help message.\n\n", flag_help_short, flag_help_long);
     printf("%s, %s\n\tSet the seed used for random number generation. Defaults to the amount of clock ticks since program start.\n\n",
@@ -81,6 +86,8 @@ void print_help() {
            flag_pump_short, flag_pump_long, pump);
     printf("%s, %s\n\tSet how many passwords are generated. Defaults to %d.\n\n", flag_bulk_short, flag_bulk_long,
            bulk);
+    printf("%s, %s\n\tOverrides --bulk and instead will generate a single password. This password is copied to the clipboard however instead of printed to the terminal.\n\n",
+           flag_copy_short, flag_copy_long);
     printf("%s, %s\n\tSet the character length of each password. Defaults to %d.\n\n", flag_length_short,
            flag_length_long, length);
     printf("%s, %s\n\tSet the digit length of the numbered suffix, can be zero. Defaults to %d\n\n",
@@ -116,6 +123,9 @@ void read_params(int argc, char **argv) {
         } else if (check_flag(argv[i], flag_specialised_short, flag_specialised_long)) {
             specialized = TRUE;
             continue;
+        } else if (check_flag(argv[i], flag_copy_short, flag_copy_long)) {
+            copied = TRUE;
+            continue;
         } else if (check_flag(argv[i], flag_numbers_short, flag_numbers_long)) {
             if (argc <= i + 1) print_missing_param(argv[i]);
             i++;
@@ -145,7 +155,18 @@ void execute() {
 
     for (int i = 0; i < bulk; i++) {
         for (int j = 0; j < pump; j++) rand();
+
         unsigned char *pwd = generate_password();
+
+        if (copied) {
+            char cmd[128];
+            strcpy(cmd, "echo ");
+            strcat(cmd, pwd);
+            strcat(cmd, " | pbcopy");
+            system(cmd);
+            exit(EXIT_SUCCESS);
+        }
+
         printf("%s\n", pwd);
         free(pwd);
     }

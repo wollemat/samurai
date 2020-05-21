@@ -51,20 +51,20 @@ char *generate_password() {
 
     for (int i = 0; i < length; i++) {
         if (sign) {
-            pwd[i] = (char) consonants[rand() % strlen(consonants)];
+            pwd[i] = (char) consonants[arc4random_uniform(strlen(consonants))];
         } else {
-            pwd[i] = (char) vowels[rand() % strlen(vowels)];
+            pwd[i] = (char) vowels[arc4random_uniform(strlen(vowels))];
         }
 
         sign = (sign) ? FALSE : TRUE;
     }
 
     for (int i = 0; i < suffix; i++) {
-        pwd[length - 1 - i] = (char) numbers[rand() % strlen(numbers)];
+        pwd[length - 1 - i] = (char) numbers[arc4random_uniform(strlen(numbers))];
     }
 
     if (capitalized) pwd[0] = (char) toupper(pwd[0]);
-    if (specialized) pwd[length - 1 - suffix] = specials[rand() % strlen(specials)];
+    if (specialized) pwd[length - 1 - suffix] = specials[arc4random_uniform(strlen(specials))];
 
     return pwd;
 }
@@ -125,8 +125,6 @@ int read_integer(int* param, const char* arg) {
 }
 
 void read_params(int argc, char **argv) {
-    seed = clock();
-
     for (int i = 1; i < argc; i++) {
         if (check_flag(argv[i], flag_capitalised_short, flag_capitalised_long)) {
             capitalized = TRUE;
@@ -165,7 +163,7 @@ void execute() {
     srand(seed);
 
     for (int i = 0; i < bulk; i++) {
-        for (int j = 0; j < pump; j++) rand();
+        for (int j = 0; j < pump; j++) arc4random();
 
         char *pwd = generate_password();
 

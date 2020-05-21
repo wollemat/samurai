@@ -168,7 +168,7 @@ Do NOT make use of Capitals.
 Avoid digits or special characters.
 Use [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles) for the branch name.
 Some examples are: `topic/chore/readme`, `topic/feature/parallelism` and `topic/bug/heart-bleed`.
-The only exemptions are `master`, `develop` and `hotfix`.
+The only exemptions are the `master` branch, the `develop` branch, the `hotfix` branch and the `release/version` branches.
 * Make your changes and commit them. 
 Remember the [commit message conventions](#commit-messages).
 Do not forget to add yourself to the contributor section of the [README](README.md) if not done so already.

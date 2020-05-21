@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-const char *version = "V1.1.0";
+const char *version = "V1.2.0";
 
 const char *flag_version_short = "-v";
 const char *flag_help_short = "-h";

@@ -1,5 +1,7 @@
 language: c
 os: osx
+notifications:
+  email: false
 
 script:
   - mkdir build

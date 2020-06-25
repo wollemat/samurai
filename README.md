@@ -1,7 +1,7 @@
 
 <p  align="center"> <img src="doc/icon.png" alt="Icon" width="100" height="100" /> </p>
 <h1 align="center">Samurai</h1>
-<h4 align="center">"The Human Readable Password Generator"</h4>
+<h4 align="center">"The Readable Password Generator"</h4>
 
 <p align="center">
     <a href="https://travis-ci.com/github/wollemat/samurai/builds">
@@ -55,7 +55,7 @@ Download the source code by running the following code in your command prompt:
 $ git clone https://github.com/wollemat/samurai.git
 ```
 
-Or simply grab a copy of the source code as a Zip file [here](https://github.com/wollemat/samurai/archive/master.zip) for the latest release and [here](https://github.com/wollemat/samurai/archive/develop.zip) for the *"bleeding edge"* version.
+Or simply grab a copy of the source code as a zip file [here](https://github.com/wollemat/samurai/archive/master.zip) for the latest release and [here](https://github.com/wollemat/samurai/archive/develop.zip) for the *"bleeding edge"* version.
 
 Building is as simple as running the following commands in the root of the project:
 
@@ -79,17 +79,15 @@ Now, you can simply run `samurai` and receive your newly generated passwords.
 Some default settings are used to generate some decent passwords. 
 However, behaviour can be altered using a variety of flags:
 
-| Flag Short | Flag Long | Argument | Default | Description |
-|------------|-----------|----------|---------|------------------------------------------------------------------------------|
-| -v | --version | none | none | Display the current version of Samurai |
-| -h | --help | none | none | Show a usage manual |
-| -p | --pump | int | 65536 | How many times is iterated before generating each password |
-| -b | --bulk | int | 10 | How many passwords are generated |
-| -C | --copy | none | none | Overrides --bulk and instead will generate a single password. This password is copied to the clipboard however instead of printed to the terminal |
-| -l | --length | int | 12 | Set the character length of each password |
-| -n | --numbers | int | 2 | Set the digit length of the number suffix, can be zero |
-| -c | --capitalised | none | false | Capitalise the passwords |
-| -s | --specialised | none | false | Use a special character |
+| Flag          | Argument | Default | Description                                 |
+|---------------|----------|---------|---------------------------------------------|
+| --version     | none     | none    | Display the current version of Samurai.     |
+| --help        | none     | none    | Show a usage manual message.                |
+| --copy        | none     | none    | Copy to the clipboard instead of printing.  |
+| --length      | int      | 12      | Set the character length of password.       |
+| --numbered    | int      | 0       | Set the digit length of the number suffix.  |
+| --capitalised | none     | false   | Capitalise the password.                    |
+| --specialised | none     | false   | End password with special character.        |
 
 ## Examples
 
@@ -98,55 +96,34 @@ Use them as inspiration and obviously DO NOT use these passwords yourselves.
 
 ```
 $ samurai
-
-nezevitygi63
-rocalurado06
-qyjihagabo76
-hasojodugo31
-bimijusira87
-nutitubuju65
-bowyquzixu84
-wodekobyke35
-homicenobi94
-napetewily52
 ```
 
 ```
-$ samurai --capitalised --specialised
-
-Sakobeqos*63
-Jyxezahin*64
-Civosaqop?16
-Kitusojur-32
-Pexutasew%25
-Husubisis#98
-Nuqakalod!10
-Golomahul*04
-Gycesamun$17
-Nuqonosyq?80
+$ samurai --version
 ```
 
 ```
-$ samurai --bulk 3 --length 30 --numbers 5
-
-hanolurygaxapomebideqypoz33263
-pexepyqidudisikalepyroqen95252
-tahanabapixyrivemalibygud23946
+$ samurai --help
 ```
 
 ```
-$ samurai --seed 1234 --pump 100000000
+$ samurai --copy
+```
 
-dacycicoxi07
-relabylene72
-hivepuwovu76
-wejuvacepi35
-wysybopitu00
-tyguraxijy85
-bacewepity68
-cudisypoda56
-gisoxyviri56
-jogabufyke93
+```
+$ samurai --length 20
+```
+
+```
+$ samurai --numbered 3
+```
+
+```
+$ samurai --capitalised
+```
+
+```
+$ samurai --specialised
 ```
 
 Good Luck & Be Safe!
@@ -156,7 +133,7 @@ Good Luck & Be Safe!
 Feel free to help me out and make your mark on this project. 
 No program is ever perfect and Samurai can always be improved upon.
 If you feel like a feature is missing or you encounter a bug, please report it by creating an [issue](https://github.com/wollemat/samurai/issues/new).
-Before doing this please read the [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contributing](CONTRIBUTING.md) guidelines.
+Before doing this please read the [Code of Conduct](CODE_OF_CONDUCT.md) and the [Contributing Guidelines](CONTRIBUTING.md).
 I look forward to working with you.
 
 ## Contributors

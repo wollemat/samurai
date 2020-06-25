@@ -96,34 +96,38 @@ Use them as inspiration and obviously DO NOT use these passwords yourselves.
 
 ```
 $ samurai
-```
 
-```
-$ samurai --version
-```
-
-```
-$ samurai --help
+xiwifubikowi
 ```
 
 ```
 $ samurai --copy
+
+Password has been copied to the clipboard.
 ```
 
 ```
 $ samurai --length 20
+
+doripibeyusiwiwasiso
 ```
 
 ```
 $ samurai --numbered 3
+
+pehacecas202
 ```
 
 ```
 $ samurai --capitalised
+
+Kogetuqulasu
 ```
 
 ```
 $ samurai --specialised
+
+tocuzakukeb+
 ```
 
 Good Luck & Be Safe!

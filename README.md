@@ -55,7 +55,7 @@ Building is as simple as running the following command in the root of the projec
 $ make
 ```
 
-This will create a `bin` directory in which Make will place the executable `samurai`.
+This will compile the source to a binary called `samurai` and make the binary executable.
 
 If you are updating the project then cleaning it in advance might be necessary. Use the following command for this:
 
@@ -66,7 +66,7 @@ $ make clean
 ## Deployment
 
 Running Samurai is just as easy as building it.
-You can directly run the executable in the `bin` directory or add the binary to your `PATH` and run it like any other program.
+You can directly run the executable or add the binary to your `PATH` and run it like any other program.
 Now, you can simply run `samurai` and receive your newly generated passwords.
 
 Some default settings are used to generate some decent passwords.

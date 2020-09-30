@@ -1,5 +1,5 @@
 
-<p  align="center"> <img src="doc/icon.png" alt="Icon" width="100" height="100" /> </p>
+<p  align="center"> <img src="icon.png" alt="Icon" width="100" height="100" /> </p>
 <h1 align="center">Samurai</h1>
 <h4 align="center">"The Readable Password Generator"</h4>
 
@@ -38,8 +38,6 @@ The solution is Samurai, it generates passwords arbitrarily long, strong and com
 QUICK DISCLAIMER: I am not a security expert of any kind. 
 Please do not accept my advise without a grain of salt (get it!). 
 Use your own brain and if you do not agree with this method then use any other method you do agree with.
-
-<p align="center"> <img src="doc/recording.svg" alt="Tutorial GIF" width="100%" height="600"/> </p>
 
 ## Building
 

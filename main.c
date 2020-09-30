@@ -17,9 +17,9 @@ const int TRUE = 1; // True constant.
 const int FALSE = 0; // False constant.
 
 const char *pool_vowel = "aeiou"; // Pool of vowel characters.
-const char *pool_consonant = "bcdfghjklmnpqrstvwxyz"; // Pool of consonants characters.
+const char *pool_consonant = "bcdfgklmnpqrstvz"; // Pool of consonants characters.
 const char *pool_numeric = "0123456789"; // Pool of numeric digits.
-const char *pool_special = "!@#$%^&*-+?"; // Pool of special characters.
+const char *pool_special = "@#$"; // Pool of special characters.
 
 int length = 12; // Default password length is 12.
 int suffix = 0; // Default numbered suffix length is zero.

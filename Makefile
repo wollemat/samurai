@@ -1,7 +1,8 @@
 
-samurai:
-	gcc main.c -o samurai
-	chmod a+x samurai
+bin/samurai:
+	mkdir bin
+	gcc main.c -o bin/samurai
+	chmod a+x bin/samurai
 
 clean:
-	rm -f samurai
+	rm -rf bin
